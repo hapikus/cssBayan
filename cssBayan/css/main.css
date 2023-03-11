@@ -5,7 +5,7 @@
 
 html {
   font-family: "Roboto", sans-serif;
-  background-color: #D7C9AA;
+  background-color: #d7c9aa;
 }
 
 .container {
@@ -36,7 +36,7 @@ html {
 .bayan-item__trigger-cont {
   display: flex;
   justify-content: space-between;
-  color: #0B7A75;
+  color: #0b7a75;
 
   font-size: 2em;
   font-weight: 900;
@@ -98,22 +98,24 @@ html {
     4) Change rotation for hovered section icon
 */
 
-.bayan:hover p.trigger-icon {
-  visibility: visible;
-}
+@media (hover: hover) and (pointer: fine) {
+  .bayan:hover p.trigger-icon {
+    visibility: visible;
+  }
 
-.bayan:hover p.trigger-name {
-  color: #7B2D26;
-}
+  .bayan:hover p.trigger-name {
+    color: #7b2d26;
+  }
 
-.bayan-item:hover .bayan-item__content {
-  display: block;
-  margin: 0 auto;
-  opacity: 1;
-}
+  .bayan-item:hover .bayan-item__content {
+    display: block;
+    margin: 0 auto;
+    opacity: 1;
+  }
 
-.bayan-item:hover p.trigger-icon {
-  transform: rotate(45deg);
+  .bayan-item:hover p.trigger-icon {
+    transform: rotate(45deg);
+  }
 }
 
 /* Selected 
@@ -121,14 +123,14 @@ html {
     2) Change icon rotation    
 */
 
-.bayan-item__input:checked ~ label p.trigger-icon {
-  transform: rotate(45deg);
-}
-
 .bayan-item__input:checked ~ .bayan-item__content {
   display: block;
   margin: 0 auto;
   opacity: 1;
+}
+
+.bayan-item__input:checked ~ label p.trigger-icon {
+  transform: rotate(45deg);
 }
 
 /* Main logics
@@ -136,10 +138,53 @@ html {
 */
 
 .bayan-item__input:checked ~ label p.trigger-name {
-  color: #7B2D26;
+  color: #7b2d26;
 }
 
 .bayan-item__input:checked ~ .bayan-item__content {
   display: block;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 835px) {
+  /* Global */
+  .container {
+    padding-top: 1.3em;
+    margin: 0 0.8em;
+  }
+
+  /* Header */
+  .bayan-item__trigger {
+    padding: 1em;
+  }
+
+  .bayan-item__trigger-cont {
+    font-size: 1.7em;
+  }
+
+  /* Meme-cont */
+  .bayan-item__content {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 23em) {
+  /* Global */
+  .container {
+    padding-top: 0.5em;
+  }
+
+  /* Header */
+  .bayan-item__trigger {
+    padding: 0.6em;
+  }
+
+  .bayan-item__trigger-cont {
+    font-size: 1.3em;
+  }
+
+  /* Meme-cont */
+  .bayan-item__content {
+    padding: 0.6em;
+  }
 }
