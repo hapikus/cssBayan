@@ -1,77 +1,129 @@
-@import './reset.css';
+@import "./reset.css";
 
 /* General */
 
 .container {
-    padding-top: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+  padding-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .bayan-item {
-    position: relative;
-    margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .bayan-item__input {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Header */
 
 .bayan-item__trigger {
-    display: block;
-    padding: 20px;
-    border: 1px solid black;
+  display: block;
+  padding: 20px;
+  border: 1px solid black;
 }
 
 .bayan-item__trigger-cont {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .trigger-name {
-    font-size: 16px;
+  font-size: 16px;
+
+  transition: all 0.3s ease-in;
 }
 
 .trigger-icon {
-    font-weight: 700;
-    visibility: hidden;
+  font-weight: 700;
+  visibility: hidden;
 
-    transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 /* Meme-cont */
 
 .bayan-item__content {
-    padding: 20px;
-    border: 1px solid black;
-    
-    border-top: none;
-    display: none;
+  padding: 20px;
+  border: 1px solid black;
+
+  border-top: none;
+  display: none;
+  opacity: 0;
+
+  animation: fadein 0.4s ease-in;
 }
 
 .bayan-item__content-cont {
-    display: flex;  
-    width: 100%; 
+  display: flex;
+  width: 100%;
 }
 
 .bayan-item__content-img {
-    height: 250px;
-    object-fit: cover;
+  height: 250px;
+  object-fit: cover;
 
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* logics */
 
-.bayan-item__input:checked ~ .bayan-item__trigger {
-    background-color: #eee;
+/* Meme animation */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* hover 
+    1) Shows icons
+    2) Change text color
+    3) Shows meme
+    4) Change rotation for hovered section icon
+*/
+
+.bayan:hover p.trigger-icon {
+  visibility: visible;
+}
+
+.bayan:hover p.trigger-name {
+  color: darkcyan;
+}
+
+.bayan-item:hover .bayan-item__content {
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.bayan-item:hover p.trigger-icon {
+  transform: rotate(45deg);
+}
+
+/* Selected 
+    1) Show meme
+    2) Change icon rotation    
+*/
+
+.bayan-item__input:checked ~ label p.trigger-icon {
+  transform: rotate(45deg);
 }
 
 .bayan-item__input:checked ~ .bayan-item__content {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.bayan-item__input:checked ~ .bayan-item__trigger {
+  background-color: #eee;
+}
+
+.bayan-item__input:checked ~ .bayan-item__content {
+  display: block;
+  margin: 0 auto;
 }
