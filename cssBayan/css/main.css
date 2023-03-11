@@ -1,16 +1,22 @@
 @import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap");
 
 /* General */
 
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: #D7C9AA;
+}
+
 .container {
-  padding-top: 20px;
-  max-width: 800px;
+  padding-top: 1.3em;
+  max-width: 50em;
   margin: 0 auto;
 }
 
 .bayan-item {
   position: relative;
-  margin-bottom: 10px;
+  padding-bottom: 0.6em;
 }
 
 .bayan-item__input {
@@ -23,23 +29,25 @@
 
 .bayan-item__trigger {
   display: block;
-  padding: 20px;
-  border: 1px solid black;
+  padding: 1.3em;
+  border: 0.06em solid black;
 }
 
 .bayan-item__trigger-cont {
   display: flex;
   justify-content: space-between;
+  color: #0B7A75;
+
+  font-size: 2em;
+  font-weight: 900;
 }
 
 .trigger-name {
-  font-size: 16px;
-
   transition: all 0.3s ease-in;
 }
 
 .trigger-icon {
-  font-weight: 700;
+  font-weight: 900;
   visibility: hidden;
 
   transition: all 0.3s ease-in;
@@ -48,10 +56,10 @@
 /* Meme-cont */
 
 .bayan-item__content {
-  padding: 20px;
-  border: 1px solid black;
-
+  padding: 1.3em;
+  border: 0.06em solid black;
   border-top: none;
+
   display: none;
   opacity: 0;
 
@@ -64,7 +72,7 @@
 }
 
 .bayan-item__content-img {
-  height: 250px;
+  height: 20em;
   object-fit: cover;
 
   margin: 0 auto;
@@ -75,8 +83,12 @@
 /* Meme animation */
 
 @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* hover 
@@ -91,7 +103,7 @@
 }
 
 .bayan:hover p.trigger-name {
-  color: darkcyan;
+  color: #7B2D26;
 }
 
 .bayan-item:hover .bayan-item__content {
@@ -119,8 +131,12 @@
   opacity: 1;
 }
 
-.bayan-item__input:checked ~ .bayan-item__trigger {
-  background-color: #eee;
+/* Main logics
+    1) Checked
+*/
+
+.bayan-item__input:checked ~ label p.trigger-name {
+  color: #7B2D26;
 }
 
 .bayan-item__input:checked ~ .bayan-item__content {
