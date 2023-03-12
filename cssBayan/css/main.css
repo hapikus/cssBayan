@@ -145,6 +145,11 @@ html {
   color: #7b2d26;
 }
 
+.bayan-item__input:active ~ label p.trigger-name,
+.bayan-item__input:focus ~ label p.trigger-name {
+  color: #BD7A75;
+}
+
 .bayan-item__input:checked ~ .bayan-item__content {
   display: block;
   margin: 0 auto;
