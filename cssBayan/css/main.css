@@ -1,0 +1,235 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap");
+
+/* General */
+
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: #d7c9aa;
+}
+
+.container {
+  padding-top: 1.3em;
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+.bayan-item {
+  padding-bottom: 0.6em;
+}
+
+.bayan-item__input {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Header */
+
+.title {
+  font-size: 2.2em;
+  font-weight: 700;
+
+  padding: 0.5em;
+}
+
+.bayan-item__trigger {
+  display: block;
+  padding: 0.9em;
+  border-top: 0.1em solid #8e9193;
+}
+
+.bayan-item__trigger-cont {
+  display: flex;
+  justify-content: space-between;
+  color: #0b7a75;
+
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.trigger-name {
+  transition: all 0.35s ease-in;
+}
+
+.trigger-icon {
+  font-weight: 900;
+  visibility: hidden;
+
+  transition: all 0.3s ease-in;
+}
+
+/* Meme-cont */
+
+.bayan-item__content {
+  padding: 0.9em;
+
+  display: none;
+  opacity: 0;
+
+  animation: fadein 0.55s ease-in;
+}
+
+.bayan-item__content-cont {
+  display: flex;
+  width: 100%;
+}
+
+.bayan-item__content-img {
+  height: 20em;
+  object-fit: cover;
+
+  margin: 0 auto;
+}
+
+/* logics */
+
+/* Meme animation */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* hover 
+    1) Shows icons
+    2) Change text color
+    3) Shows meme
+    4) Change rotation for hovered section icon
+*/
+
+@media (hover: hover) and (pointer: fine) {
+  .bayan:hover p.trigger-icon {
+    visibility: visible;
+  }
+
+  .bayan:hover p.trigger-name {
+    color: #7b2d26;
+  }
+
+  .bayan-item:hover .bayan-item__content {
+    display: block;
+    margin: 0 auto;
+    opacity: 1;
+  }
+
+  .bayan-item:hover p.trigger-icon {
+    transform: rotate(45deg);
+  }
+}
+
+/* Selected 
+    1) Show meme
+    2) Change icon rotation    
+*/
+
+.bayan-item__input:checked ~ .bayan-item__content {
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.bayan-item__input:checked ~ label p.trigger-icon {
+  transform: rotate(45deg);
+}
+
+/* Main logics
+    1) Checked
+*/
+
+.bayan-item__input:checked ~ label p.trigger-name {
+  color: #7b2d26;
+}
+
+.bayan-item__input:active ~ label p.trigger-name,
+.bayan-item__input:focus ~ label p.trigger-name {
+  color: #BD7A75;
+}
+
+.bayan-item__input:checked ~ .bayan-item__content {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 835px) {
+  /* Global */
+  .container {
+    padding-top: 1.3em;
+    margin: 0 0.8em;
+  }
+
+  /* Header */
+  .title {
+    font-size: 1.8em;
+  }
+
+  .bayan-item__trigger {
+    padding: 1em;
+  }
+
+  .bayan-item__trigger-cont {
+    font-size: 1.7em;
+  }
+
+  .trigger-icon {
+    visibility: visible;
+  }
+
+  /* Meme-cont */
+  .bayan-item__content {
+    padding: 1em;
+  }
+
+  .bayan-item__content-img {
+    height: 18em;
+  }
+
+  @media (hover: hover) {
+    .trigger-icon {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  /* Global */
+  .container {
+    padding-top: 0.5em;
+  }
+
+  /* Header */
+  .title {
+    font-size: 1.4em;
+  }
+
+  .bayan-item__trigger {
+    padding: 0.6em;
+  }
+
+  .bayan-item__trigger-cont {
+    font-size: 1.3em;
+  }
+
+  .trigger-icon {
+    visibility: visible;
+  }
+
+  /* Meme-cont */
+  .bayan-item__content {
+    padding: 0.6em;
+  }
+
+  .bayan-item__content-img {
+    height: 16em;
+  }
+
+  @media (hover: hover) {
+    .trigger-icon {
+      visibility: hidden;
+    }
+  }
+}
