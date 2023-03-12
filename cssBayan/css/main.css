@@ -179,6 +179,10 @@ html {
     padding: 1em;
   }
 
+  .bayan-item__content-img {
+    height: 18em;
+  }
+
   @media (hover: hover) {
     .trigger-icon {
       visibility: hidden;
@@ -212,6 +216,10 @@ html {
   /* Meme-cont */
   .bayan-item__content {
     padding: 0.6em;
+  }
+
+  .bayan-item__content-img {
+    height: 16em;
   }
 
   @media (hover: hover) {
