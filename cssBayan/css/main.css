@@ -15,7 +15,6 @@ html {
 }
 
 .bayan-item {
-  position: relative;
   padding-bottom: 0.6em;
 }
 
@@ -29,8 +28,8 @@ html {
 
 .bayan-item__trigger {
   display: block;
-  padding: 1.3em;
-  border: 0.06em solid black;
+  padding: 0.9em;
+  border-top: 2px solid #8e9193;
 }
 
 .bayan-item__trigger-cont {
@@ -43,7 +42,7 @@ html {
 }
 
 .trigger-name {
-  transition: all 0.3s ease-in;
+  transition: all 0.35s ease-in;
 }
 
 .trigger-icon {
@@ -56,14 +55,12 @@ html {
 /* Meme-cont */
 
 .bayan-item__content {
-  padding: 1.3em;
-  border: 0.06em solid black;
-  border-top: none;
+  padding: 0.9em;
 
   display: none;
   opacity: 0;
 
-  animation: fadein 0.4s ease-in;
+  animation: fadein 0.55s ease-in;
 }
 
 .bayan-item__content-cont {
@@ -168,7 +165,7 @@ html {
   }
 }
 
-@media screen and (max-width: 23em) {
+@media screen and (max-width: 350px) {
   /* Global */
   .container {
     padding-top: 0.5em;
